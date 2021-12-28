@@ -2,9 +2,8 @@ import { extendTheme } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 const fonts = {
-  heading: `'Roboto', 'AppleSDGothicNeo-Regular', sans-serif`,
-  body: `'Roboto', 'AppleSDGothicNeo-Regular', sans-serif`,
-  mono: `'Menlo', monospace`
+  heading: `'Spoqa Han Sans Neo', 'AppleSDGothicNeo-Regular', sans-serif`,
+  body: `'Spoqa Han Sans Neo', 'AppleSDGothicNeo-Regular', sans-serif`
 }
 
 const fontSize = {

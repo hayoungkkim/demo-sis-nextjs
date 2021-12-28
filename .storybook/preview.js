@@ -1,10 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react'
 
+import Fonts from '../src/fonts'
 import theme from '../src/theme'
 
 export const decorators = [
   (Story) => (
     <ChakraProvider resetCSS theme={theme}>
+      <Fonts />
       <Story />
     </ChakraProvider>
   )
