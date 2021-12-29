@@ -10,6 +10,7 @@ import {
 
 import Header from './Header'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -40,6 +41,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
+      <Footer />
     </Box>
   )
 }
