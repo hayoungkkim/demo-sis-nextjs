@@ -60,6 +60,32 @@ module.exports = {
     '@chakra-ui/react': { disable: true }
   },
   webpackFinal: async (config) => {
+    // Don't use Storybook's default SVG Configuration
+    config.module.rules = config.module.rules.map((rule) => {
+      if (rule.test.toString().includes('svg')) {
+        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
+        return { ...rule, test: new RegExp(test) }
+      } else {
+        return rule
+      }
+    })
+
+    // use @svgr/webpack loader for svg
+    config.module.rules.push({
+      test: /\.svg$/,
+      enforce: 'pre',
+      use: [
+        {
+          loader: require.resolve('@svgr/webpack'),
+          options: {
+            ref: true,
+            dimensions: false,
+            replaceAttrValues: { '#000': 'currentColor' }
+          }
+        }
+      ]
+    })
+
     return merge(config, {
       resolve: {
         alias: {

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40">
+  <defs>
+    <filter id="d" width="129.4%" height="129.4%" x="-14.7%" y="-11.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+    </filter>
+    <filter id="f">
+      <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+    </filter>
+    <path id="a" d="M0 0h40v40H0z"/>
+    <path id="g" d="M0 7.437h43.563V0H0z"/>
+    <rect id="c" width="34" height="34" x="0" y="0" rx="17"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <g mask="url(#b)">
+      <g transform="translate(3 3)">
+        <mask id="e" fill="#fff">
+          <use xlink:href="#c"/>
+        </mask>
+        <use xlink:href="#c" fill="#000" filter="url(#d)"/>
+        <path fill="#F18181" d="M0 0h34v9.563H0z" mask="url(#e)"/>
+        <path fill="#D51F95" d="M0 9.563h34v14.875H0z" mask="url(#e)"/>
+        <path fill="#F65E56" d="M0 24.438h34v9.563H0z" mask="url(#e)"/>
+        <g filter="url(#f)">
+          <g mask="url(#e)">
+            <path fill="#000" d="M28.484 21.25h1.571v-7.438h-1.57zm-9.128 0h1.53v-7.438h-1.53zm-2.319-7.437v2.975h-1.75v1.487h1.75v2.975h1.53v-7.437z"/>
+            <path fill="#000" d="M12.347 14.53v2.258H-3.72v1.487h16.066v2.145h3.73v-1.307h-2.16v-3.276h2.16V14.53z"/>
+            <path fill="#000" d="M3.144 18.964v1.31h6.2v.976h1.62v-2.286z"/>
+            <g transform="translate(-3.719 13.813)">
+              <path fill="#000" d="M8.848 1.454c.16.235.704.87 1.925.87 1.222 0 1.766-.635 1.926-.87.14.229.631.818 1.93.818h.055v-1.27h-.054c-.834 0-1.049-.605-1.102-1.002h-1.712c-.048.424-.256 1.002-1.043 1.002C9.986 1.002 9.78.424 9.73 0H8.018c-.053.397-.268 1.002-1.102 1.002h-.053v1.27h.053c1.3 0 1.79-.59 1.932-.818"/>
+              <mask id="h" fill="#fff">
+                <use xlink:href="#g"/>
+              </mask>
+              <path fill="#000" d="M35.351 4.462h8.212V2.975H35.35zm-6.937.858c-1.08 0-1.612-.779-1.612-1.601s.532-1.602 1.612-1.602 1.612.78 1.612 1.602c0 .822-.532 1.601-1.612 1.601m0-4.577c-1.947 0-3.182 1.332-3.182 2.976 0 1.643 1.235 2.976 3.182 2.976 1.948 0 3.183-1.333 3.183-2.976 0-1.644-1.235-2.976-3.183-2.976" mask="url(#h)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

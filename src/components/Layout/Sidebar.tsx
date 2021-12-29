@@ -12,6 +12,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { LogoIcon } from '../icons'
 
 interface SidebarProps extends BoxProps {
   onClose: () => void
@@ -65,21 +66,20 @@ const Sidebar = ({ onClose, ...rest }: SidebarProps) => {
     <Box
       transition="3s ease"
       bg="white"
-      borderRight="1px"
-      borderRightColor="gray.200"
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="6" justifyContent="space-between">
-        <Text display={{ base: 'none', md: 'flex' }} fontSize="2xl" fontWeight="bold">
-          SSG.COM
-        </Text>
+        <LogoIcon display={{ base: 'none', md: 'flex' }} icon="logo_ssg" height={14} />
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       <Flex mx="6" mb="4">
         <Text fontSize="2xl" fontWeight="bold">
-          User님의
+          <Text as="span" color="purple.800">
+            User
+          </Text>
+          님의
           <br />
           SIS 오피스
         </Text>
@@ -95,43 +95,39 @@ const NavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        px={4}
-        as={ChakraLink}
-        href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
-        _hover={{
-          textDecoration: 'none'
-        }}>
-        <Text color="gray.900">{label}</Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Flex>
+    <Stack spacing={0}>
+      <Link href={href ?? '#'} passHref>
+        <Flex
+          px="4"
+          py="2"
+          as={ChakraLink}
+          justify="space-between"
+          align="center"
+          _hover={{
+            textDecoration: 'none'
+          }}
+          onClick={children && onToggle}>
+          <Text color="gray.900">{label}</Text>
+          {children && (
+            <Icon
+              as={ChevronDownIcon}
+              transition="all .25s ease-in-out"
+              transform={isOpen ? 'rotate(180deg)' : ''}
+              w="6"
+              h="6"
+            />
+          )}
+        </Flex>
+      </Link>
 
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          spacing={0}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor="gray.100"
-          bg="gray.200"
-          color="gray.700"
-          align={'start'}>
+      <Collapse in={isOpen} animateOpacity={false}>
+        <Stack spacing={0} bg="gray.200" color="gray.700">
           {children &&
             children.map((child) => (
               <Link key={child.label} href={child.href} passHref>
-                <ChakraLink py={2}>{child.label}</ChakraLink>
+                <ChakraLink px="4" py="2" onClick={() => console.log('clicked')}>
+                  {child.label}
+                </ChakraLink>
               </Link>
             ))}
         </Stack>
