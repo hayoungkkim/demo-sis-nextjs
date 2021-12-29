@@ -38,15 +38,8 @@ const FOOTER_ITEMS: Array<FootItem> = [
 
 const Footer = () => {
   return (
-    <Box
-      bg="gray.200"
-      ml={{ base: 0, md: 60 }}
-      pos="fixed"
-      bottom={0}
-      w={{ base: 'auto', md: 'calc(100% - 240px)' }}
-      py={{ base: 7, md: 7 }}
-      pl={{ base: 8, md: 12 }}>
-      <Flex maxW={{ base: 'full', md: '768px' }} flexDir="column">
+    <Box bg="gray.200" ml={{ base: 0, md: 60 }} py={{ base: 7, md: 7 }} pl={{ base: 8, md: 12 }}>
+      <Box maxW={{ base: 'full', md: '768px' }}>
         <Stack>
           <Text fontSize="md" fontWeight="bold">
             (주)에스에스지닷컴
@@ -86,7 +79,7 @@ const Footer = () => {
             </Link>
           </Flex>
         </Stack>
-      </Flex>
+      </Box>
     </Box>
   )
 }
