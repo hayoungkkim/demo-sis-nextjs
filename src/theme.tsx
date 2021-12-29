@@ -6,7 +6,7 @@ const fonts = {
   body: `'Spoqa Han Sans Neo', 'AppleSDGothicNeo-Regular', sans-serif`
 }
 
-const fontSize = {
+const fontSizes = {
   '2xs': '11px',
   xs: '12px',
   sm: '13px',
@@ -17,7 +17,20 @@ const fontSize = {
   '3xl': '20px',
   '4xl': '24px',
   '5xl': '28px',
-  '6xl': '32px'
+  '6xl': '32px',
+  '7xl': '36px'
+}
+
+const fontWeights = {
+  hairline: 100,
+  thin: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900
 }
 
 // const breakpoints = createBreakpoints({
@@ -135,7 +148,8 @@ const colors = {
 
 const theme = extendTheme({
   colors,
-  fontSize,
+  fontSizes,
+  fontWeights,
   fonts,
   breakpoints
 })
