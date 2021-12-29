@@ -125,7 +125,7 @@ const NavItem = ({ label, children, href }: NavItem) => {
           {children &&
             children.map((child) => (
               <Link key={child.label} href={child.href} passHref>
-                <ChakraLink px="4" py="2" onClick={() => console.log('clicked')}>
+                <ChakraLink px="4" py="2">
                   {child.label}
                 </ChakraLink>
               </Link>
