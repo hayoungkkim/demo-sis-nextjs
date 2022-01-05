@@ -1,6 +1,5 @@
 import { Flex, FlexProps, HStack, IconButton } from '@chakra-ui/react'
-import { FiBell, FiMenu } from 'react-icons/fi'
-import { LogoIcon } from '../icons'
+import { LogoIcon, SystemIcon } from '../icons'
 
 interface HeaderProps extends FlexProps {
   onOpen: () => void
@@ -21,14 +20,19 @@ const Header = ({ onOpen, ...rest }: HeaderProps) => {
       <LogoIcon display={{ base: 'flex', md: 'none' }} icon="logo_ssg" height="14" />
 
       <HStack spacing={{ base: '0', md: '6' }}>
-        <IconButton size="lg" variant="ghost" aria-label="open menu" icon={<FiBell />} />
+        <IconButton
+          size="lg"
+          variant="ghost"
+          aria-label="open menu"
+          icon={<SystemIcon icon="bell" />}
+        />
         <IconButton
           display={{ base: 'flex', md: 'none' }}
           size="lg"
           onClick={onOpen}
           variant="ghost"
           aria-label="open menu"
-          icon={<FiMenu />}
+          icon={<SystemIcon icon="category" />}
         />
       </HStack>
     </Flex>

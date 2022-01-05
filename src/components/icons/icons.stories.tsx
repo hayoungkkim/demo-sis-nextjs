@@ -19,13 +19,13 @@ export const systemIcon = (args) => (
     {iconNames.sort().map((name, index) => (
       <Box key={index}>
         <Center h={16}>
-          <SystemIcon icon={name} color={args.color} width={args.width} />
+          <SystemIcon icon={name} color={args.color} size={args.size} />
         </Center>
         <Code p={1} fontSize="2xs" color="text-gray-400" w="full">
           {`
             <SystemIcon icon="${name.toString()}"
               ${args.color !== 'current' ? ' color="' + args.color + '"' : ''}
-              ${args.width !== 7 ? ' width={' + args.width + '}' : ''} 
+              ${args.size !== 'lg' ? ' size="' + args.size + '"' : ''} 
             />
           `}
         </Code>
@@ -35,15 +35,15 @@ export const systemIcon = (args) => (
 )
 systemIcon.storyName = '시스템 아이콘'
 systemIcon.args = {
-  width: 7,
+  size: 'lg',
   color: 'current'
 }
 systemIcon.argTypes = {
-  width: {
+  size: {
     control: {
       type: 'select'
     },
-    options: [4, 5, 6, 7, 8, 9, 10]
+    options: ['xl', 'lg', 'md', 'sm', 'xs']
   },
   color: {
     control: {
@@ -65,24 +65,22 @@ export const logoIcon = (args) => (
         </Center>
         <Code p={1} fontSize="2xs" color="text-gray-400" w="full">
           {`
-          <LogoIcon icon="${name.toString()}"
-            ${args.height !== 5 ? ' height={' + args.height + '}' : ''}  
-          />
-        `}
+            <LogoIcon icon="${name.toString()}" />
+          `}
         </Code>
       </Box>
     ))}
   </Grid>
 )
 logoIcon.storyName = '로고 아이콘'
-logoIcon.args = {
-  height: 5
-}
-logoIcon.argTypes = {
-  height: {
-    control: {
-      type: 'select'
-    },
-    options: [4, 5, 6, 7, 8, 9, 10]
-  }
-}
+// logoIcon.args = {
+//   height: 5
+// }
+// logoIcon.argTypes = {
+//   height: {
+//     control: {
+//       type: 'select'
+//     },
+//     options: [4, 5, 6, 7, 8, 9, 10]
+//   }
+// }

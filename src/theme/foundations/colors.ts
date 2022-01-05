@@ -1,53 +1,3 @@
-import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const fonts = {
-  heading: `'Spoqa Han Sans Neo', 'AppleSDGothicNeo-Regular', sans-serif`,
-  body: `'Spoqa Han Sans Neo', 'AppleSDGothicNeo-Regular', sans-serif`
-}
-
-const fontSizes = {
-  '2xs': '11px',
-  xs: '12px',
-  sm: '13px',
-  md: '14px',
-  lg: '15px',
-  xl: '16px',
-  '2xl': '18px',
-  '3xl': '20px',
-  '4xl': '24px',
-  '5xl': '28px',
-  '6xl': '32px',
-  '7xl': '36px'
-}
-
-const fontWeights = {
-  hairline: 100,
-  thin: 200,
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-  extrabold: 800,
-  black: 900
-}
-
-// const breakpoints = createBreakpoints({
-//   sm: '40em',
-//   md: '52em',
-//   lg: '64em',
-//   xl: '80em'
-// })
-
-const breakpoints = createBreakpoints({
-  xs: '320px',
-  sm: '640px',
-  md: '768px',
-  lg: '1024px',
-  xl: '1280px'
-})
-
 const colors = {
   transparent: 'transparent',
   current: 'currentColor',
@@ -146,12 +96,4 @@ const colors = {
   }
 }
 
-const theme = extendTheme({
-  colors,
-  fontSizes,
-  fontWeights,
-  fonts,
-  breakpoints
-})
-
-export default theme
+export default colors

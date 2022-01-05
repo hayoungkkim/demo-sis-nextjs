@@ -5,7 +5,7 @@ import theme from '../src/theme'
 
 export const decorators = [
   (Story) => (
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProvider theme={theme}>
       <Fonts />
       <Story />
     </ChakraProvider>

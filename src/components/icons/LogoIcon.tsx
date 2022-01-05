@@ -11,5 +11,5 @@ export const LogoIcon = ({ icon, ...rest }: SystemIconProps<LogoIconType>) => (
 )
 
 LogoIcon.defaultProps = {
-  height: 5
+  height: 14
 }

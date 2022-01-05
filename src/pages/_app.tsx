@@ -8,7 +8,7 @@ import { Layout } from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProvider theme={theme}>
       <Fonts />
       <Layout>
         <Component {...pageProps} />
