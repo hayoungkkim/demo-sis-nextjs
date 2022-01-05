@@ -7,10 +7,14 @@ import {
   useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react'
+import dynamic from "next/dynamic";
 
 import Header from './Header'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
+// import RealGrid from './RealGrid'
+
+const RealGrid = dynamic(() => import('./RealGrid'), { ssr: false });
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -38,8 +42,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </Drawer>
       {/* mobilenav */}
       <Header onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4" minH="100vh">
+      <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
+        <RealGrid />
       </Box>
       <Footer />
     </Box>
